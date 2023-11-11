@@ -1,0 +1,25 @@
+name: lexical
+description: |
+  Lexical is a next-generation language server for the Elixir programming language.
+homepage: https://github.com/lexical-lsp/lexical
+licenses:
+  - Apache-2.0
+languages:
+  - Elixir
+categories:
+  - LSP
+
+source:
+  id: pkg:github/elixir-lsp/elixir-ls@v0.17.8
+  asset:
+    - target: unix
+      file: elixir-ls-{{version}}.zip
+      bin:
+        lsp: language_server.sh
+    - target: win
+      file: elixir-ls-{{version}}.zip
+      bin:
+        lsp: language_server.bat
+
+bin:
+  lexical: "{{source.asset.bin.lsp}}"
